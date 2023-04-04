@@ -16,4 +16,3 @@ Kotlin Multiplatform - todo app
 
 ## GIF
 
-
