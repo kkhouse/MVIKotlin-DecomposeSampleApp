@@ -1,0 +1,27 @@
+buildscript {
+    ext {
+        compose_ui_version = '1.2.0'
+        decompose = "1.0.0-alpha-05"
+        mvi_kotlin = "3.0.0"
+        reaktive= "1.2.1"
+        nav_version = "2.5.3"
+        essenty = "0.6.0"
+        m3version="1.0.1"
+        lottieVersion="6.0.0"
+
+
+        mockkVersion="1.13.4"
+    }
+    repositories {
+        mavenCentral()
+        google()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+    }
+}// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.android.library) apply false
+    alias(libs.plugins.kotlin.android) apply false
+    alias(libs.plugins.kotlin.jvm) apply false
+    alias(libs.plugins.dagger.hilt) apply false
+}

@@ -1,0 +1,65 @@
+CREATE TABLE Pokemon (
+    key TEXT NOT NULL PRIMARY KEY,
+    species TEXT NOT NULL,
+    sprite TEXT NOT NULL,
+    baseStatsTotal INTEGER NOT NULL,
+    num INTEGER NOT NULL,
+    favorite INTEGER NOT NULL,
+    color INTEGER
+);
+
+CREATE INDEX index_species ON Pokemon(species);
+
+CREATE TABLE Pokemon_Type (
+    key TEXT NOT NULL,
+    type TEXT NOT NULL,
+    FOREIGN KEY (key) REFERENCES Pokemon(key)
+);
+
+CREATE TABLE Pokemon_BaseStats (
+    key TEXT NOT NULL,
+    attack INTEGER NOT NULL,
+    defense INTEGER NOT NULL,
+    hp INTEGER NOT NULL,
+    specialattack INTEGER NOT NULL,
+    specialdefense INTEGER NOT NULL,
+    speed INTEGER NOT NULL,
+    FOREIGN KEY (key) REFERENCES Pokemon(key)
+);
+
+insertPokemon:
+INSERT OR REPLACE INTO Pokemon (key, species, sprite, baseStatsTotal, num, favorite, color)
+VALUES (?, ?, ?, ?, ?, ?, ?);
+
+insertPokemonType:
+INSERT OR REPLACE INTO Pokemon_Type (key, type)
+VALUES (?, ?);
+
+insertPokemonBaseStat:
+INSERT OR REPLACE INTO Pokemon_BaseStats (key, attack, defense, hp, specialattack, specialdefense, speed)
+VALUES (?, ?, ?, ?, ?, ?, ?);
+
+selectTypesForPokemon:
+SELECT type FROM Pokemon_Type
+WHERE key = ?;
+
+selectBaseStatsForPokemon:
+SELECT attack, defense, hp, specialattack, specialdefense, speed FROM Pokemon_BaseStats
+WHERE key = ?;
+
+selectAllPokemon:
+SELECT * FROM Pokemon;
+
+deletePokemon:
+DELETE FROM Pokemon
+WHERE key = ?;
+
+updatePokemonFavorite:
+UPDATE Pokemon
+SET favorite = ?
+WHERE key = ?;
+
+updatePokemonColor:
+UPDATE Pokemon
+SET color = ?
+WHERE key = ?;

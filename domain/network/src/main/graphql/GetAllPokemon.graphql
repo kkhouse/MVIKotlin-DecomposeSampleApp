@@ -1,0 +1,20 @@
+query GetPokemon($take: Int) {
+    getAllPokemon(take: $take) {
+        key
+        species
+        sprite
+        types {
+            name
+        }
+        baseStats {
+            attack
+            defense
+            hp
+            specialattack
+            specialdefense
+            speed
+        }
+        baseStatsTotal
+        num
+    }
+}

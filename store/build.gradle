@@ -1,0 +1,58 @@
+plugins {
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.dagger.hilt)
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'com.example.store'
+    compileSdk 33
+
+    defaultConfig {
+        minSdk 24
+        targetSdk 33
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation(project(":domain:model"))
+    implementation(project(":domain:repository"))
+    implementation(libs.dagger.hilt)
+    kapt(libs.dagger.hilt.compiler)
+
+    implementation(libs.compose.foundation)
+    implementation(libs.decompose.decompose)
+    implementation(libs.decompose.extensions.compose)
+    implementation(libs.reaktive.reaktive)
+    implementation(libs.mvikotlin.mvikotlin)
+    implementation(libs.mvikotlin.main)
+    implementation(libs.mvikotlin.extensions)
+
+    testImplementation(testLibs.junit)
+    testImplementation(testLibs.mockk)
+    testImplementation(testLibs.reaktive.testing)
+    testImplementation(testLibs.reaktive.utils)
+    testImplementation(testLibs.essenty.lifecycle)
+}
+
+kapt {
+    correctErrorTypes true
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="11">
+      <module name="ReduxArchitectureAndroid.domain.database.db" target="11" />
+      <module name="ReduxArchitectureAndroid.domain.network.test" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

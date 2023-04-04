@@ -1,0 +1,78 @@
+[versions]
+coreKtx = "1.7.0"
+compose-ui = "1.2.0"
+appcompat = "1.6.1"
+lifecycle-runtime-ktx = "2.5.1"
+lifecycle-viewmodel = "2.5.1"
+activity-compose = "1.3.1"
+androidx-compose-material = "1.2.0"
+android-pallete = "1.0.0"
+compose-ui-utils = "1.4.0"
+dagger-hilt = "2.44"
+decompose = "1.0.0-alpha-05"
+mvi_kotlin = "3.0.0"
+reaktive= "1.2.1"
+essenty = "0.6.0"
+m3version="1.0.1"
+lottieVersion="6.0.0"
+sqlDelight = "2.0.0-alpha05"
+apollo3 = "3.7.5"
+okhttp3 = "4.9.3"
+foundation = "1.3.1"
+coil = "2.3.0"
+
+[libraries]
+compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose-ui" }
+compose-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose-ui" }
+compose-ui-util = { module = "androidx.compose.ui:ui-util", version.ref = "compose-ui-utils" }
+compose-foundation = { module = "org.jetbrains.compose.foundation:foundation", version.ref = "foundation" }
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
+androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat"}
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
+androidx-compose-material = { module = "androidx.compose.material:material", version.ref = "androidx-compose-material" }
+androidx-compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "m3version" }
+dagger-hilt = { module = "com.google.dagger:hilt-android", version.ref = "dagger-hilt" }
+dagger-hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "dagger-hilt" }
+android-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel", version.ref = "lifecycle-viewmodel"}
+android-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle-viewmodel"}
+coil-compose =  { module = "io.coil-kt:coil-compose", version.ref = "coil"}
+coil-gif =  { module = "io.coil-kt:coil-gif", version.ref = "coil"}
+android-pallete = {  module = "androidx.palette:palette", version.ref = "android-pallete"}
+lottie-compose = {  module = "com.airbnb.android:lottie-compose", version.ref = "lottieVersion"}
+
+decompose-decompose = { module = "com.arkivanov.decompose:decompose", version.ref = "decompose"}
+decompose-extensions-compose = { module = "com.arkivanov.decompose:extensions-compose-jetbrains", version.ref = "decompose"}
+reaktive-reaktive = { module = "com.badoo.reaktive:reaktive", version.ref = "reaktive"}
+reaktive-coroutines-interop = { module = "com.badoo.reaktive:coroutines-interop", version.ref = "reaktive"}
+mvikotlin-mvikotlin = { module = "com.arkivanov.mvikotlin:mvikotlin", version.ref = "mvi_kotlin"}
+mvikotlin-main = { module = "com.arkivanov.mvikotlin:mvikotlin-main", version.ref = "mvi_kotlin"}
+mvikotlin-extensions = { module = "com.arkivanov.mvikotlin:mvikotlin-extensions-reaktive", version.ref = "mvi_kotlin"}
+mvikotlin-rx = { module = "com.arkivanov.mvikotlin:rx", version.ref = "mvi_kotlin"}
+mvikotlin-logging = { module = "com.arkivanov.mvikotlin:mvikotlin-logging", version.ref = "mvi_kotlin"}
+mvikotlin-timetravel = { module = "com.arkivanov.mvikotlin:mvikotlin-timetravel", version.ref = "mvi_kotlin"}
+
+sql-delight = { module = "app.cash.sqldelight:android-driver", version.ref = "sqlDelight"}
+
+apollo-runtime = { module = "com.apollographql.apollo3:apollo-runtime", version.ref = "apollo3"}
+okhttp3-okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp3"}
+okhttp3-logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp3"}
+
+
+[bundles]
+compose-ui = ["compose-ui", "compose-preview"]
+android-lifecycle-viewmodel = ["android-lifecycle-viewmodel", "android-lifecycle-viewmodel-ktx"]
+mvikotlin-bundles = ["mvikotlin-mvikotlin", "mvikotlin-main","mvikotlin-extensions","mvikotlin-rx","mvikotlin-logging","mvikotlin-timetravel"]
+decompose-bundles = ["decompose-decompose", "decompose-extensions-compose"]
+coil = ["coil-compose", "coil-gif"]
+
+[plugins]
+android-application = { id = "com.android.application", version = "7.4.1" }
+android-library = { id = "com.android.library", version = "7.4.1" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version = "1.7.0"}
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version = "1.7.0"}
+dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "dagger-hilt"}
+sql-delight = { id = "app.cash.sqldelight", version.ref = "sqlDelight"}
+apollo = { id = "com.apollographql.apollo3", version.ref = "apollo3"}
+
+#kotlin-kapt = { id = "kotlin-kapt"}  TODO Can Not implemented yet
