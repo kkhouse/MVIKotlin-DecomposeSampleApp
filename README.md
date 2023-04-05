@@ -16,3 +16,5 @@ Kotlin Multiplatform - todo app
 
 ## GIF
 
+<img src="pokemon1.gif" width="400">
+<img src="pokemon2.gif" width="400">
